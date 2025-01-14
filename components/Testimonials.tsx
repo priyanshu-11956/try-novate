@@ -21,7 +21,7 @@ const testimonials = [
     name: "puneet",
     role: "painter babu",
     image: "",
-    content: ".................................",
+    content: "....................................",
   },
 ];
 
