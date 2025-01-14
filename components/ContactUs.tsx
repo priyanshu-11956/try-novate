@@ -65,7 +65,7 @@ export default function ContactUs() {
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-sm text-muted-foreground">peeyush ka gmail</p>
+                    <p className="text-sm text-muted-foreground">tryx.care@gmail.com</p>
                   </div>
                 </CardContent>
               </Card>
@@ -75,7 +75,7 @@ export default function ContactUs() {
                   <Phone className="h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <p className="text-sm text-muted-foreground">peeyush ka phone number</p>
+                    <p className="text-sm text-muted-foreground">+91 8922891667</p>
                   </div>
                 </CardContent>
               </Card>
@@ -86,8 +86,8 @@ export default function ContactUs() {
                   <div>
                     <h3 className="font-semibold">Address</h3>
                     <p className="text-sm text-muted-foreground">
-                      naya thikana<br />
-                      ya fir flat lenge
+                      Faridabad<br />
+                      Haryana, India
                     </p>
                   </div>
                 </CardContent>

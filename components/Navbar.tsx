@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Menu, X, Home, CircuitBoard, Users, MessageSquare } from "lucide-react";
+import { Menu, X, CircuitBoard, Users, MessageSquare, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
@@ -11,11 +11,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: "/", label: "Home", icon: Home },
     { href: "#about", label: "About", icon: CircuitBoard },
+    { href: "#products", label: "Products", icon: Package },
+    { href: "#work", label: "Our Work", icon: CircuitBoard },
     { href: "#testimonials", label: "Testimonials", icon: Users },
     { href: "#contact", label: "Contact", icon: MessageSquare },
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b">
@@ -23,19 +32,19 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
             <CircuitBoard className="h-8 w-8 text-primary" />
-            <span className="font-bold text-xl">SmartSpace</span>
+            <span className="font-bold text-xl">Try-Novate</span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
+                onClick={() => scrollToSection(item.href)}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
             <ThemeToggle />
             <Button>Get Started</Button>
@@ -67,15 +76,14 @@ export default function Navbar() {
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
-                className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => scrollToSection(item.href)}
+                className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors w-full text-left"
               >
                 <Icon className="h-5 w-5" />
                 <span>{item.label}</span>
-              </Link>
+              </button>
             );
           })}
           <div className="px-3 py-2">

@@ -1,4 +1,4 @@
-export const projects = [
+ export const projects = [
   {
     title: "Smart Villa Automation",
     description: "Complete home automation solution for a luxury villa, including lighting, security, and climate control.",
