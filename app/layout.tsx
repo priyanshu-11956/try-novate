@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SmartSpace - Future of Living',
+  title: 'Try-Novate - Future of Living',
   description: 'Transform your home with cutting-edge IoT solutions',
 };
 
